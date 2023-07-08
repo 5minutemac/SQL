@@ -1,0 +1,7 @@
+CREATE TABLE books (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER);
+
+INSERT INTO books VALUES (1, "She Who Became the Sun", 10);
+INSERT INTO books VALUES (2, "Thrawn", 8);
+INSERT INTO books VALUES (3, "Avatar: The Rise of Kyoshi", 8);
+
+Basic value entry in a table. This is for practice, but if someone might see this eventually, I think I should try to add more of my actual reading.
