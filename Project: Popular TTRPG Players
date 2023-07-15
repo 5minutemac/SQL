@@ -1,0 +1,64 @@
+/* Table of Popular TTRPG Players (Ages are fake)*/
+
+CREATE table ttrpg_players (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER); 
+    
+INSERT into ttrpg_players (name, age) VALUES ("Matthew Mercer", "40");
+INSERT into ttrpg_players (name, age) VALUES ("Brennan Lee Mulligan", "35");
+INSERT into ttrpg_players (name, age) VALUES ("Aabria Iyengar", "38");
+INSERT into ttrpg_players (name, age) Values ("Griffin McElroy", "36");
+INSERT into ttrpg_players (name, age) Values ("Brian Murphy", "35");
+INSERT into ttrpg_players (name, age) Values ("Emily Axford", "34");
+INSERT into ttrpg_players (name, age) Values ("Lou Wilson", "30");
+INSERT into ttrpg_players (name, age) Values ("Connie", "25");
+INSERT into ttrpg_players (name, age) Values ("Zach Oyama", "29");
+INSERT into ttrpg_players (name, age) Values ("Travis McElroy", "35");
+INSERT into ttrpg_players (name, age) Values ("Justin McElroy", "50");
+INSERT into ttrpg_players (name, age) Values ("Clint McElroy", "80");
+INSERT into ttrpg_players (name, age) Values ("Becca Scott", "35");
+INSERT into ttrpg_players (name, age) Values ("Talisen Jaffe", "400");
+INSERT into ttrpg_players (name, age) Values ("Erika Ishii", "69");
+
+
+/* Table of Popular TTRPG Games and their respective game masters */
+
+CREATE table games (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    games TEXT,
+    gm TEXT);
+    
+INSERT into games (games, gm) VALUES ("Critical Role", "Matthew Mercer");
+INSERT into games (games, gm) VALUES ("Dimension 20", "Brennan Lee Mulligan");
+INSERT into games (games, gm) VALUES ("Kollok;1991", "Aabria Iyengar");
+INSERT into games (games, gm) VALUES ("The Adventure Zone", "Griffin McElroy");
+
+
+/* Table of TTRPG Players and their various guest appearances */
+
+CREATE table appearances (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    game_id INTEGER);
+    
+INSERT into appearances (person_id, game_id) VALUES (1, 2);
+INSERT into appearances (person_id, game_id) VALUES (2, 1);
+INSERT into appearances (person_id, game_id) VALUES (3, 2);
+INSERT into appearances (person_id, game_id) VALUES (3, 1);
+INSERT into appearances (person_id, game_id) VALUES (4, 2);
+
+/* TTRPG Players and Games they've made Guest Appearances on */
+Select a.gm, b.games FROM appearances
+    JOIN games a
+    ON appearances.person_id = a.id
+    Join games b
+    On appearances.game_id = b.id;
+    
+/* Game Master Profile; Oldest on top */
+    
+SELECT games.gm, ttrpg_players.age, games.games FROM ttrpg_players 
+    JOIN games
+    ON ttrpg_players.name = games.gm
+    ORDER BY age desc;
+    
