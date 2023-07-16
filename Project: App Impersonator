@@ -1,0 +1,50 @@
+CREATE TABLE players (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    friend_code INTEGER);
+    
+CREATE TABLE activity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    name TEXT,
+    date TEXT,
+    catch_info TEXT);
+    
+INSERT INTO players (name, friend_code) VALUES ("Jan", 00000001);
+INSERT INTO players (name, friend_code) Values ("Jen", 00000002);
+INSERT INTO players (name, friend_code) VALUES ("Jin", 00000003);
+INSERT INTO players (name, friend_code) VALUES ("Jon", 00000004);
+INSERT INTO players (name, friend_code) VALUES ("Jun", 00000005);
+INSERT INTO players (name, friend_code) VALUES ("Dan", 00000006);
+INSERT INTO players (name, friend_code) VALUES ("Den", 00000007);
+INSERT INTO players (name, friend_code) VALUES ("Din", 00000008);
+INSERT INTO players (name, friend_code) VALUES ("Don", 00000009);
+INSERT INTO players (name, friend_code) VALUES ("Dun", 00000010);
+INSERT INTO players (name, friend_code) VALUES ("Kan", 00000011);
+INSERT INTO players (name, friend_code) VALUES ("Ken", 00000012);
+INSERT INTO players (name, friend_code) VALUES ("Kin", 00000013);
+INSERT INTO players (name, friend_code) VALUES ("Kon", 00000014);
+INSERT INTO players (name, friend_code) VALUES ("Kun", 00000015);
+
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000001, "Jan", "01-01-2023", "Caught a Snorlax");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000001, "Jan", "01-01-2023", "Caught a Baltoy");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000002, "Jen", "01-01-2023", "Caught a Muk");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000004, "Jon", "01-01-2023", "Caught a Staryu");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (000000014, "Kon", "01-01-2023", "Caught a Vaporeon");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (000000013, "Jin", "01-02-2023", "Caught a Pikachu");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000005, "Jun", "01-02-2023", "Caught a Wooper");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000002, "Jen", "01-02-2023", "Caught a Lunatone");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000007, "Dan", "01-03-2023", "Caught a Sobble");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000008, "Den", "01-03-2023", "Caught a Torchic");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000008, "Den", "01-03-2023", "Caught a Toedscool");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000010, "Don", "01-03-2023", "Caught a Arbok");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000007, "Dan", "01-04-2023", "Caught a Timburr");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (000000012, "Ken", "01-04-2023", "Caught a Shelgon");
+INSERT INTO activity (user_id, name, date, catch_info) VALUES (00000012, "Ken", "01-04-2023", "Caught a Smoliv");
+
+/* Simple UPDATE Operator to replace data using specific user data and date of entry */
+UPDATE activity SET catch_info = "Caught a Bigachu" WHERE name = "Jin" AND date = "01-02-2023";
+UPDATE activity SET catch_info = "Caught a Bigachu" Where name = "Ken" AND date = "01-04-2023";
+
+/* Simple DELETE Operator to remove the contents as seen in row 42 */
+DELETE FROM activity WHERE id = 14;
