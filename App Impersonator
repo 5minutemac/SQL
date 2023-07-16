@@ -1,3 +1,5 @@
+# This project simluates a Pokemon Go-like app, where the code lists basic user information, and updates related to each user.
+
 CREATE TABLE players (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
