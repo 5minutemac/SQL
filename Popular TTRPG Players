@@ -1,3 +1,5 @@
+# This project lists a variety of Online Table Top RPG Actual Play players and the variety of shows they have participated in (ages for these individuals are not).
+
 /* Table of Popular TTRPG Players (Ages are fake)*/
 
 CREATE table ttrpg_players (
